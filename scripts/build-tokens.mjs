@@ -236,6 +236,82 @@ for (const [name] of Object.entries(spacingMode)) {
 `;
 }
 
+// ============ PROCESS COMPONENT TOKENS ============
+const componentsMode = tokens['Components/Mode 1'] || {};
+
+// Flatten component tokens and add to tokens.css
+let componentTokenCount = 0;
+
+// Add component tokens to tokensCSS
+tokensCSS = tokensCSS.replace('}', ''); // Remove closing brace to add more
+tokensCSS += '\n  /* ===== Component Tokens ===== */\n';
+
+// Process each component (e.g., button)
+for (const [componentName, componentData] of Object.entries(componentsMode)) {
+    // Process each variant (e.g., primary, secondary)
+    for (const [variantName, variantData] of Object.entries(componentData)) {
+        // Process each property (e.g., fill, text, stroke)
+        for (const [propName, propData] of Object.entries(variantData)) {
+            if (propData && propData.value) {
+                // Create CSS variable name: --button-primary-fill
+                const varName = `--${componentName}-${variantName}-${propName}`;
+                // Resolve the alias to get the CSS variable reference
+                const aliasValue = propData.value; // e.g., "{fill.blue}"
+
+                // Convert {fill.blue} to var(--fill-blue)
+                const aliasMatch = aliasValue.match(/^\{(.+)\}$/);
+                if (aliasMatch) {
+                    const refPath = aliasMatch[1].replace(/\./g, '-');
+                    tokensCSS += `  ${varName}: var(--${refPath});\n`;
+                } else {
+                    tokensCSS += `  ${varName}: ${aliasValue};\n`;
+                }
+                componentTokenCount++;
+            }
+        }
+    }
+}
+
+tokensCSS += '}\n';
+
+// Generate component utility classes
+themeCSS += `
+/* ===== Component Token Utilities ===== */
+`;
+
+for (const [componentName, componentData] of Object.entries(componentsMode)) {
+    for (const [variantName, variantData] of Object.entries(componentData)) {
+        for (const [propName, propData] of Object.entries(variantData)) {
+            if (propData && propData.value) {
+                const varName = `--${componentName}-${variantName}-${propName}`;
+                const className = `${componentName}-${variantName}-${propName}`;
+
+                // Check if this is a hover property (ends with -hover)
+                const isHoverProp = propName.endsWith('-hover');
+
+                // Generate appropriate utility based on property type
+                if (propName === 'fill' || propName.startsWith('fill')) {
+                    themeCSS += `.bg-${className} { background-color: var(${varName}); }\n`;
+                    // Generate hover variant for -hover properties
+                    if (isHoverProp) {
+                        themeCSS += `.hover\\:bg-${className}:hover { background-color: var(${varName}); }\n`;
+                    }
+                } else if (propName === 'text' || propName.startsWith('text')) {
+                    themeCSS += `.text-${className} { color: var(${varName}); }\n`;
+                    if (isHoverProp) {
+                        themeCSS += `.hover\\:text-${className}:hover { color: var(${varName}); }\n`;
+                    }
+                } else if (propName === 'stroke' || propName.startsWith('stroke')) {
+                    themeCSS += `.border-${className} { border-color: var(${varName}); }\n`;
+                    if (isHoverProp) {
+                        themeCSS += `.hover\\:border-${className}:hover { border-color: var(${varName}); }\n`;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // Ensure output directory exists
 const outputDir = path.dirname(TOKENS_OUTPUT);
 if (!fs.existsSync(outputDir)) {
@@ -259,5 +335,7 @@ console.log(`   - ${Object.keys(textColors).length} text colors → text-*`);
 console.log(`   - ${Object.keys(spacingMode).length} spacing tokens → p-*, m-*, gap-*`);
 console.log(`   - ${Object.keys(sizeMode).length} size tokens`);
 console.log(`   - ${Object.keys(radiusMode).length} radius tokens → rounded-*`);
+console.log(`   - ${componentTokenCount} component tokens → bg-button-*, text-button-*, border-button-*`);
 console.log('');
 console.log('   🎉 All files auto-generated! No manual CSS changes needed.');
+

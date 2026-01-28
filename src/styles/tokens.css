@@ -272,4 +272,27 @@
   --radius-xl: 16px;
   --radius-2xl: 32px;
   --radius-round: 512px;
+
+
+  /* ===== Component Tokens ===== */
+  --button-primary-fill: var(--fill-blue);
+  --button-primary-fill-hover: var(--fill-blue-dark);
+  --button-primary-text: var(--text-white);
+  --button-primary-stroke: var(--stroke-blue);
+  --button-primary-stroke-hover: var(--stroke-blue-dark);
+  --button-primary-fill-disabled: var(--fill-blue-light);
+  --button-primary-stroke-disabled: var(--stroke-blue-light);
+  --button-secondary-fill: var(--fill-white);
+  --button-secondary-fill-hover: var(--fill-gray-lightest);
+  --button-secondary-text: var(--text-default);
+  --button-secondary-stroke: var(--stroke-gray-light);
+  --button-secondary-stroke-hover: var(--stroke-gray-light);
+  --button-secondary-fill-disabled: var(--fill-gray-lighter);
+  --button-secondary-stroke-disabled: var(--stroke-gray-lighter);
+  --button-secondary-text-disabled: var(--text-default-lighter);
+  --button-tertiary-fill: var(--fill-white);
+  --button-tertiary-stroke: var(--stroke-white);
+  --button-tertiary-text: var(--text-link);
+  --button-tertiary-text-hover: var(--text-link-hover);
+  --button-tertiary-text-disabled: var(--text-link-inactive);
 }

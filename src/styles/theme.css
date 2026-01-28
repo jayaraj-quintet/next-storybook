@@ -375,3 +375,30 @@
 .gap-6xl { gap: var(--space-6xl); }
 .gap-x-6xl { column-gap: var(--space-6xl); }
 .gap-y-6xl { row-gap: var(--space-6xl); }
+
+/* ===== Component Token Utilities ===== */
+.bg-button-primary-fill { background-color: var(--button-primary-fill); }
+.bg-button-primary-fill-hover { background-color: var(--button-primary-fill-hover); }
+.hover\:bg-button-primary-fill-hover:hover { background-color: var(--button-primary-fill-hover); }
+.text-button-primary-text { color: var(--button-primary-text); }
+.border-button-primary-stroke { border-color: var(--button-primary-stroke); }
+.border-button-primary-stroke-hover { border-color: var(--button-primary-stroke-hover); }
+.hover\:border-button-primary-stroke-hover:hover { border-color: var(--button-primary-stroke-hover); }
+.bg-button-primary-fill-disabled { background-color: var(--button-primary-fill-disabled); }
+.border-button-primary-stroke-disabled { border-color: var(--button-primary-stroke-disabled); }
+.bg-button-secondary-fill { background-color: var(--button-secondary-fill); }
+.bg-button-secondary-fill-hover { background-color: var(--button-secondary-fill-hover); }
+.hover\:bg-button-secondary-fill-hover:hover { background-color: var(--button-secondary-fill-hover); }
+.text-button-secondary-text { color: var(--button-secondary-text); }
+.border-button-secondary-stroke { border-color: var(--button-secondary-stroke); }
+.border-button-secondary-stroke-hover { border-color: var(--button-secondary-stroke-hover); }
+.hover\:border-button-secondary-stroke-hover:hover { border-color: var(--button-secondary-stroke-hover); }
+.bg-button-secondary-fill-disabled { background-color: var(--button-secondary-fill-disabled); }
+.border-button-secondary-stroke-disabled { border-color: var(--button-secondary-stroke-disabled); }
+.text-button-secondary-text-disabled { color: var(--button-secondary-text-disabled); }
+.bg-button-tertiary-fill { background-color: var(--button-tertiary-fill); }
+.border-button-tertiary-stroke { border-color: var(--button-tertiary-stroke); }
+.text-button-tertiary-text { color: var(--button-tertiary-text); }
+.text-button-tertiary-text-hover { color: var(--button-tertiary-text-hover); }
+.hover\:text-button-tertiary-text-hover:hover { color: var(--button-tertiary-text-hover); }
+.text-button-tertiary-text-disabled { color: var(--button-tertiary-text-disabled); }
