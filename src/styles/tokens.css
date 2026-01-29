@@ -279,9 +279,9 @@
   --button-primary-fill-hover: var(--fill-blue-dark);
   --button-primary-text: var(--text-white);
   --button-primary-stroke: var(--stroke-blue);
-  --button-primary-stroke-hover: var(--stroke-blue-dark);
+  --button-primary-stroke-hover: var(--stroke-blue);
   --button-primary-fill-disabled: var(--fill-blue-light);
-  --button-primary-stroke-disabled: var(--stroke-blue-light);
+  --button-primary-stroke-disabled: var(--stroke-blue-lighter);
   --button-secondary-fill: var(--fill-white);
   --button-secondary-fill-hover: var(--fill-gray-lightest);
   --button-secondary-text: var(--text-default);
@@ -292,7 +292,7 @@
   --button-secondary-text-disabled: var(--text-default-lighter);
   --button-tertiary-fill: var(--fill-white);
   --button-tertiary-stroke: var(--stroke-white);
-  --button-tertiary-text: var(--text-link);
-  --button-tertiary-text-hover: var(--text-link-hover);
-  --button-tertiary-text-disabled: var(--text-link-inactive);
+  --button-tertiary-text: var(--text-link-hover);
+  --button-tertiary-text-hover: var(--text-link);
+  --button-tertiary-text-disabled: var(--text-default-lighter);
 }

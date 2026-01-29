@@ -42,6 +42,7 @@ export function Button({
     children,
     variant = 'primary',
     size = 'md',
+
     disabled = false,
     showAsHover = false,
     className = '',

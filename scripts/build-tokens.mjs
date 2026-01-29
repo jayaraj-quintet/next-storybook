@@ -1,14 +1,14 @@
 /**
  * Production-Ready Token Build Script
- * 
+ *
  * Converts Figma tokens from tokens.json to CSS files for Tailwind CSS v4
- * 
+ *
  * Run: node scripts/build-tokens.js
- * 
+ *
  * Generates:
  * - src/styles/tokens.css - CSS custom properties
  * - src/styles/theme.css - Tailwind @theme + utility classes (auto-generated)
- * 
+ *
  * When you update tokens in Figma and pull, just run this script.
  * No manual CSS changes needed!
  */
@@ -159,7 +159,7 @@ tokensCSS += '}\n';
 let themeCSS = `/**
  * Tailwind Theme - Auto-generated from tokens.json
  * DO NOT EDIT MANUALLY - Run 'npm run tokens:build' to regenerate
- * 
+ *
  * Usage:
  * - bg-blue, bg-green, bg-rose (backgrounds from fill tokens)
  * - text-danger, text-success, text-rose (text from text tokens)
