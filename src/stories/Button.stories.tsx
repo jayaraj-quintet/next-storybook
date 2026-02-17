@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { Button } from '../components/Button';
+import { ButtonSCSS as Button } from '../components/ButtonSCSS/ButtonSCSS';
 import {
     PlusIcon,
     ArrowRightIcon,

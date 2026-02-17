@@ -1,0 +1,122 @@
+// Base styles applied to all button variants
+%button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  text-decoration: none;
+
+  &:disabled, &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Variant Classes
+.primary-button {
+  @extend %button-base;
+  background-color: var(--button-primary-fill);
+  color: var(--button-primary-text);
+  border-color: var(--button-primary-stroke);
+
+  &:hover:not(:disabled):not(.disabled), &.hover {
+    background-color: var(--button-primary-fill-hover);
+    border-color: var(--button-primary-stroke-hover);
+  }
+
+  &:disabled, &.disabled {
+    background-color: var(--button-primary-fill-disabled);
+    border-color: var(--button-primary-stroke-disabled);
+    color: var(--button-primary-text-disabled);
+  }
+}
+
+.secondary-button {
+  @extend %button-base;
+  background-color: var(--button-secondary-fill);
+  color: var(--button-secondary-text);
+  border-color: var(--button-secondary-stroke);
+
+  &:hover:not(:disabled):not(.disabled), &.hover {
+    background-color: var(--button-secondary-fill-hover);
+    border-color: var(--button-secondary-stroke-hover);
+  }
+
+  &:disabled, &.disabled {
+    background-color: var(--button-secondary-fill-disabled);
+    border-color: var(--button-secondary-stroke-disabled);
+    color: var(--button-secondary-text-disabled);
+  }
+}
+
+.tertiary-button {
+  @extend %button-base;
+  background-color: var(--button-tertiary-fill);
+  color: var(--button-tertiary-text);
+  border-color: var(--button-tertiary-stroke);
+
+  &:hover:not(:disabled):not(.disabled), &.hover {
+    background-color: var(--button-tertiary-fill-hover);
+    color: var(--button-tertiary-text-hover);
+    border-color: var(--button-tertiary-stroke-hover);
+  }
+
+  &:disabled, &.disabled {
+    background-color: var(--button-tertiary-fill-disabled);
+    color: var(--button-tertiary-text-disabled);
+    border-color: var(--button-tertiary-stroke-disabled);
+  }
+}
+
+// Size Classes
+.has-sm {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--button-font-size-sm);
+  line-height: var(--button-line-height-sm);
+  border-radius: var(--button-radius-sm);
+  height: var(--button-height-sm);
+  gap: 4px;
+
+  .button-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.has-md {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--button-font-size-md);
+  line-height: var(--button-line-height-md);
+  border-radius: var(--button-radius-md);
+  height: var(--button-height-md);
+  gap: 6px;
+
+  .button-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.has-lg {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--button-font-size-lg);
+  line-height: var(--button-line-height-lg);
+  border-radius: var(--button-radius-lg);
+  height: var(--button-height-lg);
+  gap: 8px;
+
+  .button-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// Icons
+.button-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
