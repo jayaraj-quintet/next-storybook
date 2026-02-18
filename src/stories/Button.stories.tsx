@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { ButtonSCSS as Button } from '../components/ButtonSCSS/ButtonSCSS';
+import { FsButton as Button } from '../components/FsButton/FsButton';
 import {
     PlusIcon,
     ArrowRightIcon,
@@ -37,12 +37,6 @@ const iconOptions: Record<string, ReactNode> = {
 
 /**
  * Button Component
- * 
- * A versatile button component with three variants (primary, secondary, tertiary),
- * three sizes (sm, md, lg), and support for disabled and hover states.
- * Now includes support for left and right icons.
- * 
- * Styled using design tokens from Figma Token Studio integrated via TailwindCSS.
  */
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
@@ -51,7 +45,7 @@ const meta: Meta<typeof Button> = {
         layout: 'centered',
         docs: {
             description: {
-                component: 'A button component styled with Figma design tokens via TailwindCSS. Supports left and right icons.',
+                component: 'A button component styled with Figma design tokens.',
             },
         },
     },
@@ -138,7 +132,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
     args: {
         variant: 'primary',
-        children: 'Primary Button',
+        children: 'Try it Now!',
     },
 };
 

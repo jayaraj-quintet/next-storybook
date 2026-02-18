@@ -324,12 +324,12 @@
   --text-ai: #7a5bf8;
 
   /* ===== Component Tokens ===== */
-  --button-primary-fill: #1369e9;
-  --button-primary-stroke: #1369e9;
-  --button-primary-fill-hover: #1058c3;
-  --button-primary-stroke-hover: #1058c3;
-  --button-primary-fill-disabled: #acccfb;
-  --button-primary-stroke-disabled: #acccfb;
+  --button-primary-fill: #7a5bf8;
+  --button-primary-stroke: #7a5bf8;
+  --button-primary-fill-hover: #6839ef;
+  --button-primary-stroke-hover: #f4f3ff;
+  --button-primary-fill-disabled: #d2ccff;
+  --button-primary-stroke-disabled: #d2ccff;
   --button-primary-text: #ffffff;
   --button-primary-text-hover: #ffffff;
   --button-primary-text-disabled: #ffffff;

@@ -1,10 +1,10 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
-import './ButtonSCSS.scss';
+import './FsButton.scss';
 
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface ButtonSCSSProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface FsButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     variant?: ButtonVariant;
     size?: ButtonSize;
@@ -38,7 +38,7 @@ const Spinner = ({ className }: { className?: string }) => (
     </svg>
 );
 
-export function ButtonSCSS({
+export function FsButton({
     children,
     variant = 'primary',
     size = 'md',
@@ -49,7 +49,7 @@ export function ButtonSCSS({
     rightIcon,
     className = '',
     ...props
-}: ButtonSCSSProps) {
+}: FsButtonProps) {
     const isDisabled = disabled || isLoading;
 
     const buttonClasses = [
@@ -79,4 +79,4 @@ export function ButtonSCSS({
     );
 }
 
-export default ButtonSCSS;
+export default FsButton;
