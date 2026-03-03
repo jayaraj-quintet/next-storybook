@@ -1,9 +1,11 @@
+@import "tailwindcss";
 @import "./tokens.css";
+@import "./theme.css";
 
 /*
  * Global Styles
  *
- * Token file (tokens.css) is auto-generated.
+ * Token files (tokens.css, theme.css) are auto-generated.
  * Run 'npm run tokens:build' to regenerate from tokens.json.
  *
  * DO NOT add token-related styles here - update Figma instead!

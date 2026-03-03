@@ -104,7 +104,7 @@ export function Button({
     }
 
     const buttonClasses = [
-        'inline-flex items-center justify-center font-regular border',
+        'inline-flex items-center justify-center font-normal border',
         sizeStyles[size],
         gapStyles[size],
         stateClasses,
@@ -134,6 +134,5 @@ export function Button({
 }
 
 export default Button;
-
 
 
