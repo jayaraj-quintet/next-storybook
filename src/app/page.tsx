@@ -31,7 +31,7 @@ export default function Home() {
               <Button variant="secondary" size="sm" disabled>Label</Button>
             </div>
             <div className="flex gap-md items-center">
-              <Button variant="tertiary" size="sm">Label</Button>
+              <Button variant="tertiary" size="sm">Labels</Button>
               <Button variant="tertiary" size="sm">Label</Button>
               <Button variant="tertiary" size="sm" showAsHover>Label</Button>
               <Button variant="tertiary" size="sm" disabled>Label</Button>
